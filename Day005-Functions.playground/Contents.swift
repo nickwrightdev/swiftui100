@@ -146,6 +146,7 @@ print(myNum)
 //    swift converts parameter to array
 //
 // 7. functions can throw erros
+//    must be marked with 'throw' keyword
 //    handle with do, try, and catch
 //
 // 8. use inout to change variables inside a function
