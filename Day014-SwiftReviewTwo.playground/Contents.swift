@@ -189,6 +189,9 @@ taylorCopy.shoes = "flip flops"
 taylor.describe()
 taylorCopy.describe()
 
+//********************************
+// Classes
+//********************************
 class PersonClass {
     var clothes: String
     var shoes: String
