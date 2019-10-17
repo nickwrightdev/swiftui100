@@ -16,6 +16,6 @@ This simple utility app that splits a check + tip amongst a given number of peop
 I've only played around with this in the simulator, but the keyboard is not working consistently.    
 
 ## Thoughts
-It would be nice to clean this up with a nicer presentation and forcing my input to be within valid range (i.e. forcing the check amount to only use digits).   
+It would be nice to clean this up with a nicer presentation and forcing they input to be within valid range.   Would be good to get a way to dismiss the keyboard.   
 
 As I learn more SwiftUI and get back into iOS development, this is a nice little project that I can come back to and improve upon it.
