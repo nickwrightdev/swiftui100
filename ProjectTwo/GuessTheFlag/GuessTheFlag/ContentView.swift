@@ -11,7 +11,9 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var showingScore = false
+    @State private var score = 0
     @State private var scoreTitle = ""
+    @State private var alertMessage = ""
     @State private var countries = ["Estonia",
                                     "France",
                                     "Germany",
@@ -32,7 +34,7 @@ struct ContentView: View {
                            endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 30) {
+            VStack(spacing: 40) {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
@@ -55,12 +57,15 @@ struct ContentView: View {
                     }
                 }
                 
+                Text("Score: \(score)")
+                    .foregroundColor(.white)
+                
                 Spacer()
             }
         }
         .alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle),
-                  message: Text("Your score is ???"),
+                  message: Text("\(self.alertMessage) Your score is \(self.score)."),
                   dismissButton: .default(Text("Countinue")) {
                 self.askQuestion()
             })
@@ -70,8 +75,12 @@ struct ContentView: View {
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             scoreTitle = "Correct"
+            alertMessage = "Well done!"
+            score += 100
         } else {
             scoreTitle = "Wrong"
+            alertMessage = "That is the flag of \(countries[number])."
+            score -= 100
         }
         
         showingScore = true
