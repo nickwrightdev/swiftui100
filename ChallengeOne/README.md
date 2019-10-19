@@ -6,6 +6,5 @@ The simple app will convert temperatures between Celsius, Fahrenheit, and Kelvin
 
 The conversions are simple math calculations we can make ourselves, but Swift also has a struct **Measurement** that handles various unit conversions.   I explored both methods in UnitConversion.playground.
 
-## Issues
-
 ## Thoughts
+Maybe it would be fun to make a more useful converter after I complete the 100 day course.  
