@@ -40,6 +40,10 @@ struct ContentView: View {
         return orderAmount + tipValue
     }
     
+    var isZeroTip: Bool {
+        Double(tipPercentages[tipPercentage]) == 0
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -59,6 +63,7 @@ struct ContentView: View {
                 }
                 Section(header: Text("Total bill including tip")) {
                     Text("$\(totalBill, specifier: "%.2f")")
+                        .foregroundColor(isZeroTip ? .red : .primary)
                 }
                 Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
