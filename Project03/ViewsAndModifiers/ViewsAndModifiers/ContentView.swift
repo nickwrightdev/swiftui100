@@ -76,10 +76,26 @@ struct GridStack<Content: View>: View {
     }
 }
 
+struct BigBlueTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+    }
+}
+
+extension View {
+    func bigBlueTitle() -> some View {
+        self.modifier(BigBlueTitle())
+    }
+}
+
 struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 10) {
+            Text("Challenge Title")
+                .bigBlueTitle()
             CapsuleText(text: "First")
                 .foregroundColor(.white)
             CapsuleText(text: "Second")
