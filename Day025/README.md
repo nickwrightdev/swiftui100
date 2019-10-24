@@ -70,4 +70,8 @@ There may be times we want to do custom binding.   Here is a simple example usin
 		    self.agreedToEmails = $0
 	    }
     )
-I'm going to put the code for this in a sample project to see it working. 
+I'm going to put the code for this in a sample project to see it working.
+
+### Challenge
+The challenge is to make a Rock Paper Scissors game.  This is going to the "Challenge02" folder in the repository.
+
