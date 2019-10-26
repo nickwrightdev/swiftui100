@@ -11,11 +11,15 @@ import SwiftUI
 struct ContentView: View {
     @State private var wakeUp = defaultWakeTime
     @State private var sleepAmount = 8.0
-    @State private var coffeeAmount = 1
+    @State private var coffeePickerIndex = 0
     
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+    
+    private var coffeeAmount: Int {
+        return coffeePickerIndex + 1
+    }
     
     // by using static modifier, @State properties can use for initial values
     private static var defaultWakeTime: Date {
@@ -48,13 +52,22 @@ struct ContentView: View {
                     Text("Daily coffee intake")
                         .font(.headline)
                     
-                    Stepper(value: $coffeeAmount, in: 1...20) {
-                        if coffeeAmount == 1 {
-                            Text("1 cup")
-                        } else {
-                            Text("\(coffeeAmount) cups")
+                    Picker("Number of Cups", selection: $coffeePickerVal) {
+                        ForEach(1 ..< 21) {
+                            if $0 == 1 {
+                                Text("\($0) cup")
+                            } else {
+                                Text("\($0) cups")
+                            }
                         }
                     }
+//                    Stepper(value: $coffeeAmount, in: 1...20) {
+//                        if coffeeAmount == 1 {
+//                            Text("1 cup")
+//                        } else {
+//                            Text("\(coffeeAmount) cups")
+//                        }
+//                    }
                 }
             }
             .navigationBarTitle("BetterRest")
@@ -77,7 +90,7 @@ struct ContentView: View {
         let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
         let hour = (components.hour ?? 0) * 60 * 60
         let minute = (components.minute ?? 0) * 60
-        
+        print("\(coffeePickerIndex) for picker but \(coffeeAmount) cups")
         do {
             let prediction = try
                 model.prediction(wake: Double(hour + minute), estimatedSleep: sleepAmount, coffee: Double(coffeeAmount))
