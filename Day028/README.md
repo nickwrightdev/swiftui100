@@ -16,5 +16,5 @@ The trick here was Picker uses a zero-based index for the Picker options.
 
 > Change the user interface so that it always shows their recommended bedtime using a nice and large font.  Remove the Calculate button entirely
 
-[Commit]((https://github.com/nickwrightdev/swiftui100/commit/cf199494899e9e3c4dcda3aced160e2feff5e445)
+[Commit](https://github.com/nickwrightdev/swiftui100/commit/cf199494899e9e3c4dcda3aced160e2feff5e445)
 Done easily by changing the calculateBedtime function to a computed property and cleaning up alert code.
