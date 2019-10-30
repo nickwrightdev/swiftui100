@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    static private let minLettersForAnswer = 3
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -59,6 +61,17 @@ struct ContentView: View {
         
         guard isReal(word: answer) else {
             wordError(title: "Word doesn't exist", message: "That's not even a word!")
+            return
+        }
+        
+        guard meetsLengthRequirements(word: answer) else {
+            let msg = "Answers must be at least \(ContentView.minLettersForAnswer) characters."
+            wordError(title: "Too short", message: msg)
+            return
+        }
+        
+        guard isNotSimplyPartOfOriginalWord(word: answer) else {
+            wordError(title: "Don't be lazy", message: "That's just part of the original word!")
             return
         }
         
@@ -105,6 +118,16 @@ struct ContentView: View {
                                                             wrap: false,
                                                             language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func meetsLengthRequirements(word: String) -> Bool {
+        word.count >= ContentView.minLettersForAnswer
+    }
+    
+    func isNotSimplyPartOfOriginalWord(word: String) -> Bool {
+        let tempWord = rootWord.prefix(word.count).lowercased()
+        let lowercasedWord = word.lowercased()
+        return tempWord != lowercasedWord
     }
     
     func wordError(title: String, message: String) {
