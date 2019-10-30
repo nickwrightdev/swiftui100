@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var score = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -31,9 +32,15 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                
+                HStack {
+                    Text("Score: ")
+                    Text("\(score)")
+                        .font(.headline)
+                }
             }
             .navigationBarTitle(rootWord)
-                .navigationBarItems(trailing:
+                .navigationBarItems(leading:
                     Button(action: startGame) {
                         Text("New Word")
                     }
@@ -80,6 +87,8 @@ struct ContentView: View {
             return
         }
         
+        score += (10 + answer.count)    // score 10 points per word plus one point per letter?
+        
         usedWords.insert(answer, at: 0)
         newWord = ""
     }
@@ -90,6 +99,7 @@ struct ContentView: View {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
                 usedWords = [String]()
+                score = 0
                 return
             }
         }
