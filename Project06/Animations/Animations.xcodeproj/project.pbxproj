@@ -15,6 +15,10 @@
 		4A6242A1236A857D002F14B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A62429F236A857D002F14B1 /* LaunchScreen.storyboard */; };
 		4A6242AB236A9CB0002F14B1 /* AnimationBindingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6242AA236A9CB0002F14B1 /* AnimationBindingsView.swift */; };
 		4A6242AD236AA41E002F14B1 /* ExplicitAnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6242AC236AA41E002F14B1 /* ExplicitAnimationsView.swift */; };
+		4A6242AF236BDFF0002F14B1 /* AnimationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6242AE236BDFF0002F14B1 /* AnimationStackView.swift */; };
+		4A6242B1236BE2AC002F14B1 /* AnimatingGesturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6242B0236BE2AC002F14B1 /* AnimatingGesturesView.swift */; };
+		4A6242B3236BE629002F14B1 /* DragAndDelayAnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6242B2236BE629002F14B1 /* DragAndDelayAnimationsView.swift */; };
+		4A6242B5236D309D002F14B1 /* TransitioningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6242B4236D309D002F14B1 /* TransitioningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		4A6242A2236A857D002F14B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A6242AA236A9CB0002F14B1 /* AnimationBindingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationBindingsView.swift; sourceTree = "<group>"; };
 		4A6242AC236AA41E002F14B1 /* ExplicitAnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimationsView.swift; sourceTree = "<group>"; };
+		4A6242AE236BDFF0002F14B1 /* AnimationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStackView.swift; sourceTree = "<group>"; };
+		4A6242B0236BE2AC002F14B1 /* AnimatingGesturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingGesturesView.swift; sourceTree = "<group>"; };
+		4A6242B2236BE629002F14B1 /* DragAndDelayAnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDelayAnimationsView.swift; sourceTree = "<group>"; };
+		4A6242B4236D309D002F14B1 /* TransitioningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitioningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,10 @@
 				4A624298236A8570002F14B1 /* ContentView.swift */,
 				4A6242AA236A9CB0002F14B1 /* AnimationBindingsView.swift */,
 				4A6242AC236AA41E002F14B1 /* ExplicitAnimationsView.swift */,
+				4A6242AE236BDFF0002F14B1 /* AnimationStackView.swift */,
+				4A6242B0236BE2AC002F14B1 /* AnimatingGesturesView.swift */,
+				4A6242B2236BE629002F14B1 /* DragAndDelayAnimationsView.swift */,
+				4A6242B4236D309D002F14B1 /* TransitioningView.swift */,
 				4A62429A236A857D002F14B1 /* Assets.xcassets */,
 				4A62429F236A857D002F14B1 /* LaunchScreen.storyboard */,
 				4A6242A2236A857D002F14B1 /* Info.plist */,
@@ -152,9 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6242AF236BDFF0002F14B1 /* AnimationStackView.swift in Sources */,
 				4A624295236A8570002F14B1 /* AppDelegate.swift in Sources */,
+				4A6242B5236D309D002F14B1 /* TransitioningView.swift in Sources */,
+				4A6242B3236BE629002F14B1 /* DragAndDelayAnimationsView.swift in Sources */,
 				4A624297236A8570002F14B1 /* SceneDelegate.swift in Sources */,
 				4A624299236A8570002F14B1 /* ContentView.swift in Sources */,
+				4A6242B1236BE2AC002F14B1 /* AnimatingGesturesView.swift in Sources */,
 				4A6242AD236AA41E002F14B1 /* ExplicitAnimationsView.swift in Sources */,
 				4A6242AB236A9CB0002F14B1 /* AnimationBindingsView.swift in Sources */,
 			);
