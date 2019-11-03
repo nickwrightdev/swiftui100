@@ -8,6 +8,18 @@
 
 import SwiftUI
 
+struct FlagImage: View {
+    var image: String
+    
+    var body: some View {
+        Image(image)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+            .shadow(color: .black, radius: 2)
+    }
+}
+
 struct ContentView: View {
     
     @State private var showingScore = false
@@ -25,19 +37,8 @@ struct ContentView: View {
                                     "Spain",
                                     "UK",
                                     "US"].shuffled()
-    @State var correctAnswer = Int.random(in: 0...2)
-    
-    struct FlagImage: View {
-        var image: String
-        
-        var body: some View {
-            Image(image)
-                .renderingMode(.original)
-                .clipShape(Capsule())
-                .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                .shadow(color: .black, radius: 2)
-        }
-    }
+    @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var flagAnimationAmounts = [0.0, 0.0, 0.0]
     
     var body: some View {
         ZStack {
@@ -59,10 +60,16 @@ struct ContentView: View {
                 
                 ForEach(0..<3) { number in
                     Button(action: {
+                        withAnimation {
+                            if number == self.correctAnswer {
+                                self.flagAnimationAmounts[number] += 360
+                            }
+                        }
                         self.flagTapped(number)
                     }) {
                         FlagImage(image: self.countries[number])
                     }
+                    .rotation3DEffect(.degrees(self.flagAnimationAmounts[number]), axis: (x: 0, y: 1, z: 0))
                 }
                 
                 Text("Score: \(score)")
