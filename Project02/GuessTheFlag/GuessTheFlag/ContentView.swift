@@ -39,6 +39,7 @@ struct ContentView: View {
                                     "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var flagAnimationAmounts = [0.0, 0.0, 0.0]
+    @State private var flagOpacityAmounts = [1.0, 1.0, 1.0]
     
     var body: some View {
         ZStack {
@@ -63,6 +64,9 @@ struct ContentView: View {
                         withAnimation {
                             if number == self.correctAnswer {
                                 self.flagAnimationAmounts[number] += 360
+                                for index in 0..<self.flagOpacityAmounts.count {
+                                    self.flagOpacityAmounts[index] = (index == self.correctAnswer) ? 1.0 : 0.25
+                                }
                             }
                         }
                         self.flagTapped(number)
@@ -70,6 +74,7 @@ struct ContentView: View {
                         FlagImage(image: self.countries[number])
                     }
                     .rotation3DEffect(.degrees(self.flagAnimationAmounts[number]), axis: (x: 0, y: 1, z: 0))
+                    .opacity(self.flagOpacityAmounts[number])
                 }
                 
                 Text("Score: \(score)")
@@ -104,6 +109,9 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        for index in 0..<self.flagOpacityAmounts.count {
+            flagOpacityAmounts[index] = 1.0
+        }
     }
 }
 
