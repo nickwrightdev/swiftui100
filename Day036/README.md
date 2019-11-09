@@ -1,5 +1,7 @@
 # Day 36
 Projects are going to get bigger, starting with Project #7 which is called *iExpense.*
+
+An example project is included with all of these examples as well.
 ### @State only works with structs
 SwiftUI's @State property wrapper is designed for simple data local to the current view.    As soon as you want to share this data between views it stops being useful!
 
