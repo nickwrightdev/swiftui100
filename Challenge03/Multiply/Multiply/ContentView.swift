@@ -21,6 +21,7 @@ struct ContentView: View {
     
     @State private var currentQuestionIndex = 0
     @State private var questionsThisGame = 0
+    @State private var scoreThisGame = 0
     @State private var questions = [Question]()
     @State private var isGameOver = false
     @State private var currentAnswer = ""
@@ -36,6 +37,8 @@ struct ContentView: View {
         Group {
             if isGameActive {
                 if isGameOver {
+                    Text("\(scoreThisGame) / \(currentQuestionIndex)")
+                    
                     Button("Game Over") {
                         self.isGameActive = false
                     }
@@ -45,12 +48,8 @@ struct ContentView: View {
                         Text("\(currentQuestionIndex + 1) of \(questionsThisGame)")
                         Text("\(currentQuestion!.question)")
                         TextField("Answer: ", text: $currentAnswer)
-                        Button("Answer") {
-                            self.currentQuestionIndex += 1
-                            if self.currentQuestionIndex == self.questionsThisGame {
-                                self.isGameOver = true
-                            }
-                        }
+                        Button("Answer", action: answerQuestion)
+                        Text("\(scoreThisGame) / \(currentQuestionIndex)")
                     }
                 }
             } else {
@@ -74,6 +73,7 @@ struct ContentView: View {
     
     func startGame() {
         questionsThisGame = numQuestionsOptions[numQuestionsSelection]
+        scoreThisGame = 0
         createQuestions()
         isGameActive = true
         isGameOver = false
@@ -94,6 +94,34 @@ struct ContentView: View {
         if questionsThisGame == 0 {
             questionsThisGame = questions.count
         }
+    }
+    
+    func answerQuestion() {
+        guard let current = currentQuestion else {
+            return;
+        }
+        
+        
+        if let playerAnswer = Int(currentAnswer) {
+            if playerAnswer == current.answer {
+                scoreThisGame += 1
+                print("correct!")
+            } else {
+                print("wrong")
+            }
+        } else {
+            print("what are you doing?")
+        }
+        
+        nextQuestion()
+    }
+    
+    func nextQuestion() {
+        currentQuestionIndex += 1
+        if currentQuestionIndex == questionsThisGame {
+            isGameOver = true
+        }
+        currentAnswer = ""
     }
 }
 
