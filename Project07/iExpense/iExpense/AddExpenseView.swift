@@ -17,6 +17,8 @@ struct AddExpenseView: View {
     @State private var type = "Personal"
     @State private var amount = ""
     
+    @State private var inputError = false
+    
     static let types = ["Business", "Personal"]
     
     var body: some View {
@@ -34,7 +36,7 @@ struct AddExpenseView: View {
                     .keyboardType(.numberPad)
                 
             }
-        .navigationBarTitle("Add new expense")
+            .navigationBarTitle("Add new expense")
             .navigationBarItems(trailing:
                 Button("Save") {
                     if let actualAmount = Int(self.amount) {
@@ -43,9 +45,19 @@ struct AddExpenseView: View {
                                                amount: actualAmount)
                         self.expenses.items.append(item)
                         self.presentationMode.wrappedValue.dismiss()
+                    } else {
+                        self.inputError = true
                     }
                 }
             )
+            .alert(isPresented: $inputError) {
+                Alert(title: Text("Can't Add That"),
+                      message: Text("\(self.amount) is not a valid expense amount."),
+                      dismissButton: .default(Text("Try Again")) {
+                        self.amount = ""
+                        self.inputError = false;
+                })
+            }
         }
     }
 }
