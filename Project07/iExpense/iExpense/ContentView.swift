@@ -24,6 +24,8 @@ struct ContentView: View {
                         }
                         Spacer()
                         Text("$\(item.amount)")
+                            .foregroundColor(self.getTextColorForAmount(item.amount))
+                            .fontWeight(self.getFontWeightForAmount(item.amount))
                     }
                 }
                 .onDelete(perform: removeItems)
@@ -44,6 +46,28 @@ struct ContentView: View {
     
     func removeItems(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
+    }
+    
+    func getTextColorForAmount(_ amount: Int) -> Color {
+        switch(amount) {
+        case 0..<10:
+            return .blue
+        case 10..<100:
+            return .green
+        default:
+            return .black
+        }
+    }
+    
+    func getFontWeightForAmount(_ amount: Int) -> Font.Weight {
+        switch(amount) {
+        case 0..<10:
+            return .regular
+        case 10..<100:
+            return .heavy
+        default:
+            return .black
+        }
     }
 }
 
