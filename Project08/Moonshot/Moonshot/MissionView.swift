@@ -22,6 +22,8 @@ struct MissionView: View {
     let mission: Mission
     let astronauts: [CrewMember]
     
+    let allMissions: [Mission]
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
@@ -40,7 +42,7 @@ struct MissionView: View {
                         .padding()
                     
                     ForEach(self.astronauts, id: \.role) { crewMember in
-                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, allMissions: self.allMissions)) {
                             HStack {
                                 Image(crewMember.astronaut.id)
                                     .resizable()
@@ -69,8 +71,9 @@ struct MissionView: View {
         .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
     }
     
-    init(mission: Mission, astronauts: [Astronaut]) {
+    init(mission: Mission, astronauts: [Astronaut], allMissions: [Mission]) {
         self.mission = mission
+        self.allMissions = allMissions
         
         var matches = [CrewMember]()
         
@@ -91,6 +94,6 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[0], astronauts: astronauts, allMissions: missions)
     }
 }
