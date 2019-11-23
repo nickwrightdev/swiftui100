@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A675EDD2388E2E100533D52 /* DrawFlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A675EDC2388E2E100533D52 /* DrawFlowerView.swift */; };
+		4A675EDF2388E64D00533D52 /* BordersAndFillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A675EDE2388E64D00533D52 /* BordersAndFillsView.swift */; };
+		4A675EE12388E82B00533D52 /* MetalWithDrawingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A675EE02388E82B00533D52 /* MetalWithDrawingGroupView.swift */; };
 		4AD8546623864934008C2EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8546523864934008C2EBE /* AppDelegate.swift */; };
 		4AD8546823864935008C2EBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8546723864935008C2EBE /* SceneDelegate.swift */; };
 		4AD8546A23864935008C2EBE /* DrawingPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8546923864935008C2EBE /* DrawingPathsView.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A675EDC2388E2E100533D52 /* DrawFlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawFlowerView.swift; sourceTree = "<group>"; };
+		4A675EDE2388E64D00533D52 /* BordersAndFillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersAndFillsView.swift; sourceTree = "<group>"; };
+		4A675EE02388E82B00533D52 /* MetalWithDrawingGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalWithDrawingGroupView.swift; sourceTree = "<group>"; };
 		4AD8546223864934008C2EBE /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD8546523864934008C2EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AD8546723864935008C2EBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +68,13 @@
 				4AD8546723864935008C2EBE /* SceneDelegate.swift */,
 				4AD8546923864935008C2EBE /* DrawingPathsView.swift */,
 				4AD8547923864BC6008C2EBE /* ShapesExampleView.swift */,
+				4A675EDC2388E2E100533D52 /* DrawFlowerView.swift */,
 				4AD8546B2386493B008C2EBE /* Assets.xcassets */,
 				4AD854702386493B008C2EBE /* LaunchScreen.storyboard */,
 				4AD854732386493B008C2EBE /* Info.plist */,
 				4AD8546D2386493B008C2EBE /* Preview Content */,
+				4A675EDE2388E64D00533D52 /* BordersAndFillsView.swift */,
+				4A675EE02388E82B00533D52 /* MetalWithDrawingGroupView.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -150,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AD8546623864934008C2EBE /* AppDelegate.swift in Sources */,
+				4A675EE12388E82B00533D52 /* MetalWithDrawingGroupView.swift in Sources */,
+				4A675EDF2388E64D00533D52 /* BordersAndFillsView.swift in Sources */,
+				4A675EDD2388E2E100533D52 /* DrawFlowerView.swift in Sources */,
 				4AD8547A23864BC6008C2EBE /* ShapesExampleView.swift in Sources */,
 				4AD8546823864935008C2EBE /* SceneDelegate.swift in Sources */,
 				4AD8546A23864935008C2EBE /* DrawingPathsView.swift in Sources */,
