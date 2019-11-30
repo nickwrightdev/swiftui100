@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A423B802390588400AF6935 /* ArrowChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A423B7F2390588400AF6935 /* ArrowChallengeView.swift */; };
+		4A423B82239208A000AF6935 /* ColorCyclingRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A423B81239208A000AF6935 /* ColorCyclingRectView.swift */; };
+		4A423B842392251500AF6935 /* RootContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A423B832392251500AF6935 /* RootContentView.swift */; };
 		4A675EDD2388E2E100533D52 /* DrawFlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A675EDC2388E2E100533D52 /* DrawFlowerView.swift */; };
 		4A675EDF2388E64D00533D52 /* BordersAndFillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A675EDE2388E64D00533D52 /* BordersAndFillsView.swift */; };
 		4A675EE12388E82B00533D52 /* MetalWithDrawingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A675EE02388E82B00533D52 /* MetalWithDrawingGroupView.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		4A423B7F2390588400AF6935 /* ArrowChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowChallengeView.swift; sourceTree = "<group>"; };
+		4A423B81239208A000AF6935 /* ColorCyclingRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingRectView.swift; sourceTree = "<group>"; };
+		4A423B832392251500AF6935 /* RootContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContentView.swift; sourceTree = "<group>"; };
 		4A675EDC2388E2E100533D52 /* DrawFlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawFlowerView.swift; sourceTree = "<group>"; };
 		4A675EDE2388E64D00533D52 /* BordersAndFillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersAndFillsView.swift; sourceTree = "<group>"; };
 		4A675EE02388E82B00533D52 /* MetalWithDrawingGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalWithDrawingGroupView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				4A675EEA2389DFBE00533D52 /* AnimatablePairView.swift */,
 				4A675EEC2389E6AA00533D52 /* CreateSpirographView.swift */,
 				4A423B7F2390588400AF6935 /* ArrowChallengeView.swift */,
+				4A423B81239208A000AF6935 /* ColorCyclingRectView.swift */,
+				4A423B832392251500AF6935 /* RootContentView.swift */,
 				4AD8546B2386493B008C2EBE /* Assets.xcassets */,
 				4AD854702386493B008C2EBE /* LaunchScreen.storyboard */,
 				4AD854732386493B008C2EBE /* Info.plist */,
@@ -185,9 +191,11 @@
 				4A675EE92389DCE000533D52 /* AnimatableDataView.swift in Sources */,
 				4A675EDF2388E64D00533D52 /* BordersAndFillsView.swift in Sources */,
 				4A675EE32389D59A00533D52 /* BlendingMultiplyView.swift in Sources */,
+				4A423B82239208A000AF6935 /* ColorCyclingRectView.swift in Sources */,
 				4A675EE52389D73600533D52 /* BlendingScreenView.swift in Sources */,
 				4A675EDD2388E2E100533D52 /* DrawFlowerView.swift in Sources */,
 				4AD8547A23864BC6008C2EBE /* ShapesExampleView.swift in Sources */,
+				4A423B842392251500AF6935 /* RootContentView.swift in Sources */,
 				4AD8546823864935008C2EBE /* SceneDelegate.swift in Sources */,
 				4A423B802390588400AF6935 /* ArrowChallengeView.swift in Sources */,
 				4A675EED2389E6AA00533D52 /* CreateSpirographView.swift in Sources */,
