@@ -56,10 +56,18 @@ struct ArrowChallengeView: View {
             Spacer()
             
             Arrow(lineWidth: lineWidth, lineHeight: lineHeight)
+                .fill(Color.green)
                 .frame(width: 300, height: 300)
             
             Spacer()
             
+            Text("Line Width: \(lineWidth, specifier: "%.2f")")
+            Slider(value: $lineWidth, in: 0.25...0.75)
+                .padding([.horizontal, .bottom])
+            
+            Text("Line Height: \(lineHeight, specifier: "%.2f")")
+            Slider(value: $lineHeight, in: 0.25...0.75)
+                .padding([.horizontal])
         }
     }
 }
