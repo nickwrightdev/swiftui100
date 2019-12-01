@@ -58,6 +58,9 @@ struct RootContentView: View {
                     NavigationLink(destination: ArrowChallengeView()) {
                         Text("Draw an Arrow")
                     }
+                    NavigationLink(destination: ColorCyclingRectView()) {
+                        Text("Color Cycling Rectangle")
+                    }
                 }
             }
             .navigationBarTitle("Drawing App Examples")
